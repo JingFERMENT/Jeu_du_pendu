@@ -10,6 +10,9 @@
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font pour le title -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <!-- font pour le texte -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- bootstrap -->
     <link rel="stylesheet" href="./public/assets/framework/bootstrap.min.css" />
@@ -18,65 +21,85 @@
 </head>
 
 <body>
+    <!-- affichage d'une couverture grise quand le jouent échouent pour ne plus y accéder -->
+    <div class="d-none" id="cover1"></div>
+    <!-- affichage d'une couverture quand le jouent réussit pour ne plus y accéder -->
+    <div class="d-none" id="cover2"></div>
+    
+    <!-- partie header  -->
     <header class="container">
-        <div class="row d-flex justify-content-center m-5">
+        <div class="row d-flex justify-content-center">
             <div class="col-12">
-                <h1 class="text-center">Jeu du pendu</h1>
+            <!-- title du jeu  -->
+                <h1 class="text-center text-decoration-underline">Jeu du pendu</h1>
+            </div>
+            <!-- partie image pendu -->
+            <div class="col-12 m-3 d-flex justify-content-center">
+                <img class="text-center m-auto" src="./public/assets/img/Le-Pendu-7.png"
+                    alt="Septième image du jeu du pendu">
             </div>
         </div>
     </header>
 
-
     <main class="container">
         <div class="row d-flex flex-column">
-            <div class="col" id="display_random_word"></div>
-            <div class="col">
-                <p class="mt-3" id="helpInfo"></p>
-            </div>
+            <!-- affichage d'un mot aléatoire -->
+            <div class="col text-center" id="display_random_word"></div>
+            <!-- affichage du message pour indiquer le nombre d'essais restant -->
+            <p class="mt-3" id="helpInfo"></p>
         </div>
-        <div class="row d-flex m-5">
-            <div class="col-6" id="btn_group">
-                <button type="button" class="btn btn-info" value="a" id="btn_a">A</button>
-                <button type="button" class="btn btn-info" value="b">B</button>
-                <button type="button" class="btn btn-info" value="c">C</button>
-                <button type="button" class="btn btn-info" value="d">D</button>
-                <button type="button" class="btn btn-info" value="e">E</button>
-                <button type="button" class="btn btn-info" value="f">F</button>
-                <button type="button" class="btn btn-info" value="g">G</button>
-                <button type="button" class="btn btn-info" value="h">H</button>
-                <button type="button" class="btn btn-info" value="i">I</button>
-                <button type="button" class="btn btn-info" value="j">J</button>
-                <button type="button" class="btn btn-info" value="k">K</button>
-                <button type="button" class="btn btn-info"value="l">L</button>
-                <button type="button" class="btn btn-info" value="m">M</button>
-                <button type="button" class="btn btn-info" value="n">N</button>
-                <button type="button" class="btn btn-info" value="o">O</button>
-                <button type="button" class="btn btn-info" value="p">P</button>
-                <button type="button" class="btn btn-info" value="q">Q</button>
-                <button type="button" class="btn btn-info" value="r">R</button>
-                <button type="button" class="btn btn-info" value="s">S</button>
-                <button type="button" class="btn btn-info" value="t">T</button>
-                <button type="button" class="btn btn-info" value="u">U</button>
-                <button type="button" class="btn btn-info" value="v">V</button>
-                <button type="button" class="btn btn-info" value="w">W</button>
-                <button type="button" class="btn btn-info" value="x">X</button>
-                <button type="button" class="btn btn-info" value="y">Y</button>
-                <button type="button" class="btn btn-info" value="z">Z</button>
+        <!-- affichage du message pour indiquer le nombre d'essais restant -->
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-lg-6" id="btn_group">
+                <button type="button" class="my-1 btn btn-info" value="a">A</button>
+                <button type="button" class="my-1 btn btn-info" value="b">B</button>
+                <button type="button" class="my-1 btn btn-info" value="c">C</button>
+                <button type="button" class="my-1 btn btn-info" value="d">D</button>
+                <button type="button" class="my-1 btn btn-info" value="e">E</button>
+                <button type="button" class="my-1 btn btn-info" value="f">F</button>
+                <button type="button" class="my-1 btn btn-info" value="g">G</button>
+                <button type="button" class="my-1 btn btn-info" value="h">H</button>
+                <button type="button" class="my-1 btn btn-info" value="i">I</button>
+                <button type="button" class="my-1 btn btn-info" value="j">J</button>
+                <button type="button" class="my-1 btn btn-info" value="k">K</button>
+                <button type="button" class="my-1 btn btn-info" value="l">L</button>
+                <button type="button" class="my-1 btn btn-info" value="m">M</button>
+                <button type="button" class="my-1 btn btn-info" value="n">N</button>
+                <button type="button" class="my-1 btn btn-info" value="o">O</button>
+                <button type="button" class="my-1 btn btn-info" value="p">P</button>
+                <button type="button" class="my-1 btn btn-info" value="q">Q</button>
+                <button type="button" class="my-1 btn btn-info" value="r">R</button>
+                <button type="button" class="my-1 btn btn-info" value="s">S</button>
+                <button type="button" class="my-1 btn btn-info" value="t">T</button>
+                <button type="button" class="my-1 btn btn-info" value="u">U</button>
+                <button type="button" class="my-1 btn btn-info" value="v">V</button>
+                <button type="button" class="my-1 btn btn-info" value="w">W</button>
+                <button type="button" class="my-1 btn btn-info" value="x">X</button>
+                <button type="button" class="my-1 btn btn-info" value="y">Y</button>
+                <button type="button" class="my-1 btn btn-info" value="z">Z</button>
             </div>
 
-            <div class="col-6 d-flex justify-content-center">
-                <div class="d-none" id="pendu_1"><img src="./public/assets/img/Le-Pendu-1.png" alt="Premier image du jeu du pendu"></div>
-                <div class="d-none" id="pendu_2"><img src="./public/assets/img/Le-Pendu-2.png" alt="Premier image du jeu du pendu">
+
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="d-none" id="pendu_1"><img src="./public/assets/img/Le-Pendu-1.png"
+                        alt="Premier image du jeu du pendu"></div>
+                <div class="d-none" id="pendu_2"><img src="./public/assets/img/Le-Pendu-2.png"
+                        alt="Deuxième image du jeu du pendu">
                 </div>
-                <div class="d-none" id="pendu_3"><img src="./public/assets/img/Le-Pendu-3.png" alt="Premier image du jeu du pendu">
+                <div class="d-none" id="pendu_3"><img src="./public/assets/img/Le-Pendu-3.png"
+                        alt="Troisième image du jeu du pendu">
                 </div>
-                <div class="d-none" id="pendu_4"><img src="./public/assets/img/Le-Pendu-4.png" alt="Premier image du jeu du pendu">
+                <div class="d-none" id="pendu_4"><img src="./public/assets/img/Le-Pendu-4.png"
+                        alt="Quatrième image du jeu du pendu">
                 </div>
-                <div class="d-none" id="pendu_5"><img src="./public/assets/img/Le-Pendu-5.png" alt="Premier image du jeu du pendu">
+                <div class="d-none" id="pendu_5"><img src="./public/assets/img/Le-Pendu-5.png"
+                        alt="Cinquième image du jeu du pendu">
                 </div>
-                <div class="d-none" id="pendu_6"><img src="./public/assets/img/Le-Pendu-6.png" alt="Premier image du jeu du pendu">
+                <div class="d-none" id="pendu_6"><img src="./public/assets/img/Le-Pendu-6.png"
+                        alt="Sixième image du jeu du pendu">
                 </div>
-                <div class="d-none" id="pendu_7"><img src="./public/assets/img/Le-Pendu-7.png" alt="Premier image du jeu du pendu">
+                <div class="d-none" id="pendu_7"><img src="./public/assets/img/Le-Pendu-7.png"
+                        alt="Septième image du jeu du pendu">
                 </div>
             </div>
         </div>
@@ -85,13 +108,15 @@
 
 
     <!-- footer -->
-    <!-- <footer class="container">
-        <div class="row m-5">
+    <footer class="container">
+        <div class="row mt-5">
             <div class="col-12">
-                <div class="text-center">Jeux du pendu © 2023</div>
+                <div class="text-center mt-2"><small>Jeux du pendu © 2023</small></div>
             </div>
         </div>
-    </footer> -->
+    </footer>
+
+
 
     <!-- mon fichier JS  -->
     <script src="./public/assets/js/script.js"></script>
@@ -100,10 +125,3 @@
 </body>
 
 </html>
-
-
-<!-- le jeux de pendule  -->
-<!-- Interface avec une bouton "commencer"
-avec une bouton si on souhaite arrêter 
-quand on a réussi, les lettres se dansent 
- affichage d'une nouvelle bouton "un nouveau mot" -->

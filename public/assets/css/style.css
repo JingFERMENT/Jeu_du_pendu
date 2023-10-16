@@ -1,8 +1,96 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #A7DAE8;
+    font-family: "Poppins", sans-serif;
+    background-color: #a7dae8;
 }
 
-.col {
+h1 {
+    font-family: "Open Sans", sans-serif;
+}
+
+header img {
+    height: 90px;
+    width: 110px;
+    border: 3px solid #ffaec9;
+}
+
+#display_random_word {
+    font-size: 3rem;
+    color: #31d2f2;
     background-color: white;
+}
+
+.btn-info {
+    width: 40px;
+}
+
+#pendu_1 {
+    border: 3px solid skyblue;
+}
+
+#pendu_2 {
+    border: 3px solid #ffaec9;
+}
+
+#pendu_3 {
+    border: 3px solid #ffaec9;
+}
+
+#pendu_4 {
+    border: 3px solid #ffaec9;
+}
+
+#pendu_5 {
+    border: 3px solid orange;
+}
+
+#pendu_6 {
+    border: 3px solid orangered;
+}
+
+#pendu_7 {
+    border: 3px solid red;
+}
+
+#cover1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: grey;
+    z-index: 999;
+    animation: fadeinout 4s linear forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fadeinout {
+    100% {
+        opacity: 0.5;
+    }
+}
+
+#cover2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 31d2f2;
+    z-index: 999;
+    animation: fadeinout 6s linear forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes fadeinout {
+    100% {
+        opacity: 0.6;
+    }
 }
