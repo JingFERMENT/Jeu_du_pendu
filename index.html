@@ -21,16 +21,14 @@
 </head>
 
 <body>
-    <!-- affichage d'une couverture grise quand le jouent échouent pour ne plus y accéder -->
-    <div class="d-none" id="cover1"></div>
-    <!-- affichage d'une couverture quand le jouent réussit pour ne plus y accéder -->
-    <div class="d-none" id="cover2"></div>
-    
+    <!-- affichage d'une couverture grise quand le jouent échouent/réussi pour indiquer que le jeu est terminé -->
+    <div class="d-none" id="cover"><button type="button" class="btn btn-primary" id="restart">Recommencer</button></div>
+
     <!-- partie header  -->
     <header class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12">
-            <!-- title du jeu  -->
+                <!-- title du jeu  -->
                 <h1 class="text-center text-decoration-underline">Jeu du pendu</h1>
             </div>
             <!-- partie image pendu -->
@@ -48,38 +46,38 @@
             <!-- affichage du message pour indiquer le nombre d'essais restant -->
             <p class="mt-3" id="helpInfo"></p>
         </div>
-        <!-- affichage du message pour indiquer le nombre d'essais restant -->
+        <!-- affichage toutes les lettres -->
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 col-lg-6" id="btn_group">
-                <button type="button" class="my-1 btn btn-info" value="a">A</button>
-                <button type="button" class="my-1 btn btn-info" value="b">B</button>
-                <button type="button" class="my-1 btn btn-info" value="c">C</button>
-                <button type="button" class="my-1 btn btn-info" value="d">D</button>
-                <button type="button" class="my-1 btn btn-info" value="e">E</button>
-                <button type="button" class="my-1 btn btn-info" value="f">F</button>
-                <button type="button" class="my-1 btn btn-info" value="g">G</button>
-                <button type="button" class="my-1 btn btn-info" value="h">H</button>
-                <button type="button" class="my-1 btn btn-info" value="i">I</button>
-                <button type="button" class="my-1 btn btn-info" value="j">J</button>
-                <button type="button" class="my-1 btn btn-info" value="k">K</button>
-                <button type="button" class="my-1 btn btn-info" value="l">L</button>
-                <button type="button" class="my-1 btn btn-info" value="m">M</button>
-                <button type="button" class="my-1 btn btn-info" value="n">N</button>
-                <button type="button" class="my-1 btn btn-info" value="o">O</button>
-                <button type="button" class="my-1 btn btn-info" value="p">P</button>
-                <button type="button" class="my-1 btn btn-info" value="q">Q</button>
-                <button type="button" class="my-1 btn btn-info" value="r">R</button>
-                <button type="button" class="my-1 btn btn-info" value="s">S</button>
-                <button type="button" class="my-1 btn btn-info" value="t">T</button>
-                <button type="button" class="my-1 btn btn-info" value="u">U</button>
-                <button type="button" class="my-1 btn btn-info" value="v">V</button>
-                <button type="button" class="my-1 btn btn-info" value="w">W</button>
-                <button type="button" class="my-1 btn btn-info" value="x">X</button>
-                <button type="button" class="my-1 btn btn-info" value="y">Y</button>
-                <button type="button" class="my-1 btn btn-info" value="z">Z</button>
+            <div class="col-12 col-lg-6">
+                <button type="button" class="my-1 btn btn-info">A</button>
+                <button type="button" class="my-1 btn btn-info">B</button>
+                <button type="button" class="my-1 btn btn-info">C</button>
+                <button type="button" class="my-1 btn btn-info">D</button>
+                <button type="button" class="my-1 btn btn-info">E</button>
+                <button type="button" class="my-1 btn btn-info">F</button>
+                <button type="button" class="my-1 btn btn-info">G</button>
+                <button type="button" class="my-1 btn btn-info">H</button>
+                <button type="button" class="my-1 btn btn-info">I</button>
+                <button type="button" class="my-1 btn btn-info">J</button>
+                <button type="button" class="my-1 btn btn-info">K</button>
+                <button type="button" class="my-1 btn btn-info">L</button>
+                <button type="button" class="my-1 btn btn-info">M</button>
+                <button type="button" class="my-1 btn btn-info">N</button>
+                <button type="button" class="my-1 btn btn-info">O</button>
+                <button type="button" class="my-1 btn btn-info">P</button>
+                <button type="button" class="my-1 btn btn-info">Q</button>
+                <button type="button" class="my-1 btn btn-info">R</button>
+                <button type="button" class="my-1 btn btn-info">S</button>
+                <button type="button" class="my-1 btn btn-info">T</button>
+                <button type="button" class="my-1 btn btn-info">U</button>
+                <button type="button" class="my-1 btn btn-info">V</button>
+                <button type="button" class="my-1 btn btn-info">W</button>
+                <button type="button" class="my-1 btn btn-info">X</button>
+                <button type="button" class="my-1 btn btn-info">Y</button>
+                <button type="button" class="my-1 btn btn-info">Z</button>
             </div>
 
-
+            <!-- affichage des images du pendu-->
             <div class="col-12 col-md-6 d-flex justify-content-center">
                 <div class="d-none" id="pendu_1"><img src="./public/assets/img/Le-Pendu-1.png"
                         alt="Premier image du jeu du pendu"></div>
@@ -104,8 +102,6 @@
             </div>
         </div>
     </main>
-
-
 
     <!-- footer -->
     <footer class="container">
