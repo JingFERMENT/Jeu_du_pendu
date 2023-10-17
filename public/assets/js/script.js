@@ -25,18 +25,25 @@ const helpInfo = document.getElementById("helpInfo");
 const cover = document.getElementById("cover");
 const restartBtn = document.getElementById("restart");
 
-let aChosenWordByComputer = words[Math.floor(Math.random() * words.length)];
+let aChosenWordByComputer = chooseRandomWord(words);
+
 const aChosenWordByComputerArray = aChosenWordByComputer.split("");
 console.log(aChosenWordByComputerArray);
 let nbOfStars = aChosenWordByComputer.replace(/./g, "*");
-
-displayRandomWord.innerHTML = nbOfStars;
 const starArray = nbOfStars.split("");
-console.log(starArray);
+displayRandomWord.innerHTML = nbOfStars;
 
 const nbOfTrials = 7;
 let countError = 0;
 
+// fonction pour choisir un mot aléatoire
+function chooseRandomWord (words) {
+    let lengthOfWord = words.length;
+    let randomIndexOfTheWord = Math.floor(Math.random() * lengthOfWord)
+    return words[randomIndexOfTheWord];
+}
+
+// fonction pour affchier les images de pendu
 function displayImages(countError) {
     // l'ordinateur dessine le premier, le 2ème, la 3ème trait du pendu ....etc
     switch (countError) {
@@ -68,18 +75,19 @@ function displayImages(countError) {
             seventhImageOfPendu.classList.remove("d-none");
             break;
         default:
-            // firstImageOfPendu.classList.add("d-none");
-            // secondImageOfPendu.classList.add("d-none");
-            // thirdImageOfPendu.classList.add("d-none");
-            // fourthImageOfPendu.classList.add("d-none");
-            // fifthImageOfPendu.classList.add("d-none");
-            // sixthImageOfPendu.classList.add("d-none");
-            // seventhImageOfPendu.classList.add("d-none");
+            firstImageOfPendu.classList.add("d-none");
+            secondImageOfPendu.classList.add("d-none");
+            thirdImageOfPendu.classList.add("d-none");
+            fourthImageOfPendu.classList.add("d-none");
+            fifthImageOfPendu.classList.add("d-none");
+            sixthImageOfPendu.classList.add("d-none");
+            seventhImageOfPendu.classList.add("d-none");
             break;
     }
 }
 
-function displayHelpMessage(countError,starArray) {
+// fonction pour affchier les messages d'aide
+function displayHelpMessage(countError, starArray) {
     if (
         countError <= nbOfTrials &&
         JSON.stringify(starArray) == JSON.stringify(aChosenWordByComputerArray)
@@ -110,6 +118,7 @@ function getAllIndexes(word, letter) {
     return indexes;
 }
 
+// fonction pour vérifrier les lettres
 function checkLetter(letter, starArray) {
     if (aChosenWordByComputer.includes(letter)) {
         
@@ -133,6 +142,7 @@ function checkLetter(letter, starArray) {
     // console.log(displayRandomWord.innerHTML);
 }
 
+// fonction pour re-initialiser
 function reinitializeGame() {
     location.reload();
 }

@@ -57,7 +57,7 @@ header img {
     height: 100%;
     background: grey;
     z-index: 999;
-    animation: fadeinout 1s linear forwards;
+    animation: fadeinout 4s linear forwards;
     opacity: 0;
 }
 
